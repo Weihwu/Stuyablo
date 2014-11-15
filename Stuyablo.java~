@@ -196,7 +196,7 @@ public class Stuyablo{
 	    opponent = new Warrior("Jake");
 	}else if (choiceO == 1){
 	    opponent = new Wizard("Jake");
-	}else if (choiceO == 1){
+	}else if (choiceO == 2){
 	    opponent = new Rogue("Jake");
 	}else{
 	    opponent = new MartialArtist("Jake");

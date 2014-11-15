@@ -304,8 +304,7 @@ public class Stuyablo{
 	boolean isPlayerAlive = true;
 	int turn = 1;
 	String turnNumber = "Turn # 0==[]:::::::::::::::::::::::>";
-	if (whoFirst(p1, p2)){
-	}else{
+	if (!(whoFirst(p1, p2))){
 	    userTurn = false;
 	}
 	while (isPlayerAlive && p2.getHP() > 0){
