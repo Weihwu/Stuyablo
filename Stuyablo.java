@@ -247,12 +247,16 @@ public class Stuyablo{
 	if (inputOption.contains("A") || inputOption.equals("(A) attack")){
 	    out("");
 	    p1.attack(p2);
+	    if (p2.getHP() < 0)
+		p2.setHP(0);
 	    out("");
 	    out(p1.getStats());
 	    out(p2.getStats());
 	}else if (inputOption.contains("B") || inputOption.contains("special attack")){
 	    out("");
 	    p1.specialAttack(p2);
+	    if (p2.getHP() < 0)
+		p2.setHP(0);
 	    out("");
 	    out(p1.getStats());
 	    out(p2.getStats());						
@@ -262,7 +266,6 @@ public class Stuyablo{
 	    out(p1.getName() + " is defeated!");
 	}else{
 	    System.out.println("This is not a valid input.\nPlease try again.");
-	    out("");
 	    options(p1, p2);
 	}
     }
