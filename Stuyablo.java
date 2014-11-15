@@ -323,16 +323,19 @@ public class Stuyablo{
 			options(p1[y], p2);
 			out("");
 		    }
+		    isPlayerAlive = false;
+		    for (int z = 0; z < p1.length; z++){
+			if (p1[z].getHP() > 0){
+			    isPlayerAlive = true;
+			}
+		    }
+		    if (p2.getHP() <= 0) {
+			break;
+		    }
 		}
 		userTurn = false;
 	    }
-	    isPlayerAlive = false;
-	    for (int z = 0; z < p1.length; z++){
-		if (p1[z].getHP() > 0){
-		    isPlayerAlive = true;
-		}
-	    }
-	    if ((!(userTurn)) && isPlayerAlive){
+	    if ((!(userTurn)) && p2.getHP() > 0){
 		opponentOptions(p1,p2);
 		userTurn = true;
 	    }
