@@ -262,6 +262,7 @@ public class Stuyablo{
 	    out(p1.getName() + " is defeated!");
 	}else{
 	    System.out.println("This is not a valid input.\nPlease try again.");
+	    out("");
 	    options(p1, p2);
 	}
     }

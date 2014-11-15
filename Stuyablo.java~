@@ -247,15 +247,19 @@ public class Stuyablo{
 	if (inputOption.contains("A") || inputOption.equals("(A) attack")){
 	    out("");
 	    p1.attack(p2);
+	    if (p2.getHP() < 0)
+		p2.setHP(0);
+	    out("");
 	    out(p1.getStats());
 	    out(p2.getStats());
-	    out("");
 	}else if (inputOption.contains("B") || inputOption.contains("special attack")){
 	    out("");
 	    p1.specialAttack(p2);
+	    if (p2.getHP() < 0)
+		p2.setHP(0);
+	    out("");
 	    out(p1.getStats());
 	    out(p2.getStats());						
-	    out("");
 	}else if (inputOption.contains("C") || inputOption.contains("give up")){
 	    out("");
 	    p1.setHP(0);
@@ -321,7 +325,6 @@ public class Stuyablo{
 		    if (p1[y].getHP() > 0){			
 			out(p1[y].getName());
 			options(p1[y], p2);
-			out("");
 		    }
 		    isPlayerAlive = false;
 		    for (int z = 0; z < p1.length; z++){
@@ -329,7 +332,7 @@ public class Stuyablo{
 			    isPlayerAlive = true;
 			}
 		    }
-		    if (p2.getHP() <= 0) {
+		    if (p2.getHP() <= 0) {			
 			break;
 		    }
 		}
@@ -348,6 +351,7 @@ public class Stuyablo{
 	    turn++;
 	}
 	if (isPlayerAlive && p2.getHP() <= 0){
+	    p2.setHP(0);
 	    out("");
 	    out("Your team won!\n" + p2.getName() + " is defeated!");
 	}else{
