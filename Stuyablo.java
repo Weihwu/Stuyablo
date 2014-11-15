@@ -335,7 +335,7 @@ public class Stuyablo{
 		}
 		userTurn = false;
 	    }
-	    if ((!(userTurn)) && p2.getHP() > 0){
+	    if ((!(userTurn)) && p2.getHP() > 0 && isPlayerAlive){
 		opponentOptions(p1,p2);
 		userTurn = true;
 	    }
